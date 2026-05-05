@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>小猫钓鱼 🐱🎣 - 陈雨霏AI编程实例</title>
+  <title>小猫钓鱼 🐱🎣</title>
   <!-- 微信卡片分享 -->
-  <meta property="og:title" content="小猫钓鱼 - 陈雨霏AI编程实例" />
-  <meta property="og:description" content="陈雨霏AI编程实例" />
+  <meta property="og:title" content="小猫钓鱼" />
+  <meta property="og:description" content="陈雨霏AI编程实例 - 点击左中右区域分别移动和抛竿，鱼上钩后狂点屏幕拉鱼！看看你能钓多少分？" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://shmily86314-byte.github.io/cat-fishing-game/images/cat.png" />
-  <meta name="description" content="陈雨霏AI编程实例" />
+  <meta name="description" content="陈雨霏AI编程实例 - 点击左中右区域分别移动和抛竿，鱼上钩后狂点屏幕拉鱼！看看你能钓多少分？" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -1880,8 +1880,8 @@
             c.fillRect(0, 0, W, H)
 
             // ---- 大卡片 ----
-            const cardW = 640, cardH = 850
-            const cardX = (W-cardW)/2, cardY = (H-cardH)/2 - 20
+            const cardW = 640, cardH = 900
+            const cardX = (W-cardW)/2, cardY = (H-cardH)/2 - 10
             c.fillStyle = '#FFF'
             c.shadowColor = 'rgba(0,0,0,0.4)'
             c.shadowBlur = 30
@@ -1896,10 +1896,15 @@
             c.fillStyle = '#FF6F00'
             c.fillText('🐱 小猫钓鱼 🎣', W/2, cardY + 55)
 
+            // ---- 署名（标题下方显眼位置）----
+            c.font = '17px Arial, sans-serif'
+            c.fillStyle = '#FF9800'
+            c.fillText('— 陈雨霏AI编程实例 —', W/2, cardY + 85)
+
             // ---- 排行榜 - 标题 ----
             c.font = 'bold 26px Arial, sans-serif'
             c.fillStyle = '#8D6E63'
-            c.fillText('🏆 排行榜 TOP 10', W/2, cardY + 110)
+            c.fillText('🏆 排行榜 TOP 10', W/2, cardY + 120)
 
             // 分隔线
             c.strokeStyle = '#FFD54F'
@@ -1942,7 +1947,7 @@
             }
 
             // ---- 操作说明（次要位置，放下面，简洁版）----
-            const guideY = cardY + 580
+            const guideY = cardY + 600
             c.strokeStyle = '#E0E0E0'
             c.lineWidth = 1
             c.beginPath()
@@ -1970,11 +1975,6 @@
             c.font = '19px Arial, sans-serif'
             c.fillStyle = '#777'
             c.fillText('🐟小丑鱼100  🐠神仙鱼300  🐡河豚600  🦈鲨鱼1000', W/2, guideY + 125)
-
-            // ---- 署名 ----
-            c.font = '15px Arial, sans-serif'
-            c.fillStyle = '#BBB'
-            c.fillText('陈雨霏AI编程实例 🤖', W/2, cardY + cardH - 10)
 
             // ---- 开始按钮（大字号）----
             this.cursorTimer += 16
